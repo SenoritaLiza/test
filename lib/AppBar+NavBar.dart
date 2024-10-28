@@ -21,7 +21,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
       backgroundColor: Colors.white,
       elevation: 0,
       flexibleSpace: Padding(
-        padding: const EdgeInsets.only(top: 8.0), // Только верхний отступ
+        padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,7 +64,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
         });
       },
       child: Container(
-        width: MediaQuery.of(context).size.width / 2, // Половина экрана
+        width: MediaQuery.of(context).size.width / 2, 
         height: 40,
         decoration: BoxDecoration(
           color: _isDeliverySelected ? Colors.lightGreen : Colors.grey[200],
@@ -91,7 +91,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
         });
       },
       child: Container(
-        width: MediaQuery.of(context).size.width / 2, // Половина экрана
+        width: MediaQuery.of(context).size.width / 2, 
         height: 40,
         decoration: BoxDecoration(
           color: !_isDeliverySelected ? Colors.lightGreen : Colors.grey[200],
@@ -131,7 +131,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   }
 }
 
-// Навигационная панель с переключением экранов
+// Панель навигации
 class CustomBottomNavigationBar extends StatefulWidget {
   @override
   _CustomBottomNavigationBarState createState() =>

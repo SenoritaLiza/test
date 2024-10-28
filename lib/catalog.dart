@@ -7,8 +7,8 @@ class CatalogScreen extends StatefulWidget {
 }
 
 class _CatalogScreenState extends State<CatalogScreen> {
-  int _selectedCategoryIndex = 0; // Инициализируем значением 0 для "Все товары"
-  List<Product> filteredProducts = products; // Изначально все продукты отображаются
+  int _selectedCategoryIndex = 0; 
+  List<Product> filteredProducts = products; 
 
   // Карта для хранения количества товаров в корзине
   Map<Product, double> cart = {};
@@ -97,7 +97,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 16), // Убираем отступы от края
+      padding: EdgeInsets.symmetric(horizontal: 16), 
       child: Row(
         children: [
           SvgPicture.asset('icon/Lupa.svg'),
@@ -107,7 +107,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
               decoration: InputDecoration(
                 hintText: 'Поиск по товарам',
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.zero, // Убираем отступы от края
+                contentPadding: EdgeInsets.zero, 
               ),
             ),
           ),
@@ -133,7 +133,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
                  product.name == 'Папайя';
         }).toList();
       } else {
-        // Для остальных категорий ничего не отображаем
+
         filteredProducts = []; // Устанавливаем пустой список для остальных категорий
       }
     });
@@ -193,9 +193,9 @@ class _CatalogScreenState extends State<CatalogScreen> {
             offset: Offset(0, 4),
           ),
         ],
-        borderRadius: BorderRadius.zero, // Убираем радиус углов
+        borderRadius: BorderRadius.zero, 
       ),
-      padding: EdgeInsets.zero, // Убираем отступы от края
+      padding: EdgeInsets.zero, 
       child: Stack(
         children: [
           Column(
@@ -203,7 +203,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
             children: [
               // Изображение продукта
               ClipRRect(
-                borderRadius: BorderRadius.zero, // Убираем радиус углов
+                borderRadius: BorderRadius.zero, 
                 child: Image.asset(
                   product.imagePath,
                   width: double.infinity,
@@ -214,7 +214,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
               SizedBox(height: 4),
               // Название продукта
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0), // Добавляем отступы для текста
+                padding: const EdgeInsets.symmetric(horizontal: 8.0), 
                 child: Text(
                   product.name,
                   maxLines: 2,
@@ -227,7 +227,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
               SizedBox(height: 4),
               // Цена и старая цена
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0), // Добавляем отступы для текста
+                padding: const EdgeInsets.symmetric(horizontal: 8.0), 
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -295,25 +295,25 @@ class _CatalogScreenState extends State<CatalogScreen> {
     bool isInCart = cart.containsKey(product); // Проверяем, находится ли продукт в корзине
 
     return SizedBox(
-      width: 170, // Устанавливаем фиксированную ширину
-      height: 50, // Устанавливаем фиксированную высоту
+      width: 170, 
+      height: 50, 
       child: Container(
         decoration: BoxDecoration(
-          color: isInCart ? Colors.white : Colors.orange, // Белый, если в корзине, иначе оранжевый
+          color: isInCart ? Colors.white : Colors.orange, 
           borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: Colors.orange), // Оранжевая граница
+          border: Border.all(color: Colors.orange),
         ),
         child: TextButton(
           onPressed: () {
             setState(() {
-              cart[product] = 0.4; // Добавляем товар с начальным количеством 0.4
+              cart[product] = 0.4; 
             });
           },
           child: SvgPicture.asset(
             'icon/Basket.svg',
             width: 24,
             height: 24,
-            color: isInCart ? Colors.orange : Colors.white, // Изменяем цвет иконки
+            color: isInCart ? Colors.orange : Colors.white, 
           ),
         ),
       ),
@@ -324,13 +324,13 @@ class _CatalogScreenState extends State<CatalogScreen> {
   Widget _buildQuantityController(Product product) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white, // Цвет фона
-        borderRadius: BorderRadius.circular(30), // Закругленные углы
+        color: Colors.white, 
+        borderRadius: BorderRadius.circular(30), 
         border: Border.all(color: Colors.orange, width: 1), 
       ),
-      padding: EdgeInsets.symmetric(horizontal: 5), // Горизонтальный отступ для расстояния
+      padding: EdgeInsets.symmetric(horizontal: 5), 
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center, // Центрируем кнопки и текст
+        mainAxisAlignment: MainAxisAlignment.center, 
         children: [
           IconButton(
             onPressed: () {
@@ -347,7 +347,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
             color: Colors.black,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4.0), // Настраиваем отступ
+            padding: const EdgeInsets.symmetric(horizontal: 4.0),
             child: Text(
               '${cart[product]!.toStringAsFixed(1)} кг',
               style: TextStyle(fontSize: 16),

@@ -12,12 +12,12 @@ class HomeContent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 24.0, right: 24.0, top: 16.0), // Добавляем отступ сверху
+                padding: const EdgeInsets.only(left: 24.0, right: 24.0, top: 16.0), 
                 child: _buildSearchBar(),
               ),
 
               SizedBox(height: 20), 
-              
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Text(
@@ -35,7 +35,7 @@ class HomeContent extends StatelessWidget {
               _buildPopularSection(),
               SizedBox(height: 0),
               _buildCategoriesSection(),
-              SizedBox(height: 60), // Отступ для корзины
+              SizedBox(height: 60), 
             ],
           ),
         ),
@@ -183,7 +183,7 @@ class HomeContent extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 24),
-                child: _buildMoreButton(), // Кнопка "Показать еще"
+                child: _buildMoreButton(), 
                 ),
               ],
             ),
@@ -321,18 +321,18 @@ class HomeContent extends StatelessWidget {
     );
   }
   
-  // Виджет для отображения корзины
+  // Отображения корзины
   Widget _buildCartSummary() {
     return Container(
-      height: 48, // Высота панели корзины
-      color: Color(0xFFA3D043), // Лаймовый цвет для соответствия макету
+      height: 48, 
+      color: Color(0xFFA3D043), 
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [
-              SizedBox(width: 16), // Добавляем отступ слева
+              SizedBox(width: 16), 
               SvgPicture.asset(
                 'icon/Basket.svg', 
                 width: 32,
